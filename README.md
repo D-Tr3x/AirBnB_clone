@@ -1,26 +1,62 @@
-Project: AirBnB clone
+# AirBnB clone - The Console
 
 
-Description (Project): The goal of this project is to deploy on your server
-            a simple copy of the AirBnb website.
-            Only some essential/basic features will the implemented to
-            cover all fundamental concepts of the higher level programming track.
+## Project Description
 
-Files and Directories:
-            models/             <-   (directory containing all classes in the project)
-                base_model.py   <-   (file, base class of all models,
-                                      attr: id, created_at, updated_at
-                                      methods: save(), to_json()
-                                      )
+The goal of this project is to cretae a simple copy of the AirBnB website.
+This project serves as a foundational step in understanding the core concepts
+of higher-level programming, data modeling and application design. It includes:
+ - A command-line interface (CLI) for data management
+ - Essential functionalities for creating, updating, deleting and retrieving objects
 
-                engine/         <-   (directory containing all storage classes)
-                    file_storage.py
-
-            tests/              <-   (directory containing all unit tests)
-            console.py          <-   (file, entry point of command interpreter)
+This project will also evolve over time, implementing more complex features as we progress.
 
 
-Description (command interpreter):
-            How to start it:
-            How to use it:
-            Examples:
+
+## Files and Directories:
+   models/
+    (directory) containing all classes in the project
+
+        - base_model.py
+           (file) base class of all models
+            Attributes:
+              `id` - unique identifier for each object
+              `created_at` - timestamp when the object was created
+              `updated_at` - timestamp when the object was last updated
+            Methods:
+              `save()` - updates `updated_at` with the current time
+              `to_json()` - converts the object to a dictionary format
+
+        - engine/
+           (directory) containing all storage classes
+
+                - file_storage.py
+                  handles the storage of objects in a JSON file
+
+   tests/
+    (directory) containing all unit tests
+
+   console.py
+    (file) entry point of command-line interpreter
+
+
+
+## The Command Interpreter
+
+   Tool to interact with and manage objects in the system
+
+
+   How to start it:
+       ./console.py
+
+   How to use it:
+       (hbnb) create <class_name>
+       (hbnb) show <class_name> <id>
+       (hbnb) destroy <class_name <id>
+       (hbnb) all <class_name>
+
+   Examples:
+       (hbnb) create BaseModel
+       (hbnb) show BaseModel 1234-5678-9001
+       (hbnb) destroy BaseModel 1234-5678-9001
+       (hbnb) all BaseModel
