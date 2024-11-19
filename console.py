@@ -17,13 +17,12 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         """Exits the program on EOF (CTRL + D)"""
-        print()
+        print("")
         return True
 
     def emptyline(self):
         """Prevents empty lines from executing"""
         pass
-
 
 
 if __name__ == '__main__':
