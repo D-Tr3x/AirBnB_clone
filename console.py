@@ -11,10 +11,6 @@ class HBNBCommand(cmd.Cmd):
     intro = "Welcome to the HBNB command interpreter."\
         "Type help or ? to list commands.\n"
 
-    def emptyline(self):
-        """Prevents empty lines from executing"""
-        pass
-
     def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
@@ -23,6 +19,11 @@ class HBNBCommand(cmd.Cmd):
         """Exits the program on EOF (CTRL + D)"""
         print()
         return True
+
+    def emptyline(self):
+        """Prevents empty lines from executing"""
+        pass
+
 
 
 if __name__ == '__main__':
