@@ -4,7 +4,7 @@
 from models.base_model import BaseModel
 
 
-class Place(BaseModel):
+class Review(BaseModel):
     """Represents the review for the hbnb"""
 
     place_id = ""
