@@ -3,6 +3,7 @@
 
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -42,4 +43,5 @@ class FileStorage:
 
 global_cls = {
     "BaseModel": BaseModel,
+    "User": User,
 }

@@ -8,6 +8,7 @@ from models import storage
 
 global_cls = {
     "BaseModel": BaseModel,
+    "User": User,
 }
 
 
