@@ -16,7 +16,7 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) '
     intro = "Welcome to the HBNB command interpreter."\
-        "Type help or ? to list commands.\n"
+        " Type help or ? to list commands.\n"
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
@@ -101,8 +101,8 @@ class HBNBCommand(cmd.Cmd):
         Prints all string representation of all instances
         based or not on the class name.
 
-        Usage: all
-               all <class name>
+        Usage:(1) all
+              (2) all <class name>
         """
         args = arg.split()
         result = []
@@ -111,7 +111,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         for key, obj in storage.all().items():
-            if key.startswith(args[0] + ".") or len(args) == 0:
+            if len(args) == 0 or key.startswith(f"{args[0]}."):
                 result.append(str(obj))
         print(result)
 
@@ -145,7 +145,10 @@ class HBNBCommand(cmd.Cmd):
             return
 
         instance = storage.all()[key]
-        setattr(instance, args[2], eval(args[3]))
+        attr_name = args[2]
+        attr_value = eval(args[3])
+
+        setattr(instance, attr_name, attr_value)
         instance.save()
 
 
